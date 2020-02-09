@@ -1,0 +1,64 @@
+http://www.iden.cn/
+http://rs.p5w.net/
+http://m.kuaikanmanhua.com/
+https://www.xinyixianhua.com/
+
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+     <style>
+        #input{
+            width: 400px;
+            height: 50px;
+            border: 1px solid #333333;
+            margin: 100px auto;
+            font-size: 20px;
+        }
+     </style>
+ </head>
+ <body>
+     <input type="text" id="input">
+     <ul id="list">
+     </ul>
+     <script>
+        let city = [
+            {
+                name: '北京',
+                temperature: 30
+            },
+            {
+                name: '上海',
+                temperature: 31
+            },
+            {
+                name: '广东',
+                temperature: 30.5
+            },
+            {
+                name: '广西',
+                temperature: 30.3
+            }
+        ]
+       let input = document.getElementById('input')
+       let ul = document.getElementById('list')
+       input.onchange = function(value){
+           city.filter( ( item , index ) => {
+             if(item.name.indexOf(event.target.value) !== -1){
+                 li = document.createElement('li')
+                 li.innerHTML = item.name
+                 li.setAttribute('class','newLi')
+                 ul.appendChild(li)
+             }
+             
+           })
+           
+       }
+    //    console.log(ul.children)
+    //    let arrLi = ul.children
+    //    arrLi.forEach(element => {
+    //        element.onclick = function(){
+    //            alert(`1111`)
